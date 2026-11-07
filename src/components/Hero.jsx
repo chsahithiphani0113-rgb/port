@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  FileDown, 
-  Mail, 
-  MapPin, 
-  GraduationCap, 
+import {
+  ArrowRight,
+  FileDown,
+  Mail,
+  MapPin,
+  GraduationCap,
   Terminal,
   ShieldCheck,
   UserCheck
@@ -55,16 +55,16 @@ export default function Hero({ onOpenResumeModal }) {
     <section id="home" className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
       {/* Background subtle mesh grid pattern */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] opacity-60"></div>
-      
+
       {/* Ambient background glow for dark mode */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -z-10 w-[600px] h-[350px] bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Text & Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
-            
+
             {/* Status Pill */}
             <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -79,7 +79,7 @@ export default function Hero({ onOpenResumeModal }) {
               <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                 {PERSONAL_DETAILS.fullName}
               </h1>
-              
+
               {/* Animated Typing Subheading */}
               <div className="h-9 flex items-center">
                 <span className="text-lg sm:text-2xl font-semibold text-blue-600 dark:text-blue-400">
@@ -160,7 +160,7 @@ export default function Hero({ onOpenResumeModal }) {
           {/* Right Column: Profile Picture / Image Placeholder */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-72 sm:w-80 lg:w-88 group">
-              
+
               {/* Outer decorative card frame */}
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
 
@@ -169,19 +169,19 @@ export default function Hero({ onOpenResumeModal }) {
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                   {!imageError ? (
                     <img
-                      src="/profile.jpg"
+                      src="/photo.jpeg"
                       alt="Chaganti Sahithi Phani"
                       className="w-full h-full object-cover object-top filter contrast-[1.02] group-hover:scale-[1.02] transition-transform duration-500"
                       onError={() => setImageError(true)}
                     />
                   ) : (
-                    /* Elegant placeholder if /profile.jpg is missing */
+                    /* Fallback avatar */
                     <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
-                      <div className="w-24 h-24 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-3xl shadow-lg mb-3">
-                        CSP
+                      <div className="w-24 h-24 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-3xl shadow-lg mb-3 overflow-hidden">
+                        <img src="/photo.jpeg" alt="Sahithi" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
                       </div>
                       <p className="font-bold text-slate-800 dark:text-slate-100 text-base">CHAGANTI SAHITHI PHANI</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-400 mt-1 font-medium">Add profile.jpg in /public</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-400 mt-1 font-medium">Aspiring Software Developer</p>
                     </div>
                   )}
 
